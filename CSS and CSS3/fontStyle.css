@@ -1,0 +1,11 @@
+.fontClass{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    color: coral;
+    text-decoration: underline;
+    font-variant: small-caps;
+}
+a{text-decoration: none;}

@@ -1,0 +1,13 @@
+#d1{
+border-color: cyan;
+border-width: 2px;
+border-style: solid;
+}
+#d2{
+    border-color: darkorange;
+    border-style: groove;
+    border-width: 10px;
+}
+#d3{
+    border: solid red 5px;
+}
