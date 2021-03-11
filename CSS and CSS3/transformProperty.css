@@ -1,0 +1,25 @@
+div{
+    padding: 20px;
+    border: solid red 2px;
+    margin: 10px;
+    width: 120px;
+    height: 150px;
+    float: left;
+}
+#d1 {
+   /* transform: translate(200px,180px); */
+   /*transform: translateX(400px);*/
+   transform: translateY(400px);
+   
+}
+#d2 {
+   /* transform: rotateX(120deg);*/
+   transform: rotateY(120deg);
+}
+#d3{
+    transform: skew(20deg,30deg);
+}
+#d4 {
+    margin: 90px;
+    transform: scale(2,2);
+}

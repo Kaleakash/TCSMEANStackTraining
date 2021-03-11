@@ -1,0 +1,22 @@
+div{
+    padding: 20px;
+    border: solid red 2px;
+    margin: 10px;
+    width: 120px;
+    height: 150px;
+    float: left;
+    font-size: 10px;
+}
+#d1 {
+    transition: width 20s,height 20s;
+}
+#d1:hover{
+    width: 200px;
+    height: 250px;
+}
+#d2{
+    transition: font-size 20s;
+}
+#d2:hover{
+    font-size: 30px;
+}

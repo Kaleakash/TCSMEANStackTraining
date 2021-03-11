@@ -1,0 +1,23 @@
+div{
+    padding: 20px;
+    border: solid red 2px;
+    margin: 10px;
+    width: 120px;
+    height: 150px;
+    float: left;
+    font-size: 10px;
+    border-radius: 50%;
+    position: absolute;
+    animation-name: myanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes myanimation {
+    0% {background-color: red;margin: 20px;}
+    25% {background-color: seagreen;margin: 40px;}
+    50% {background-color: springgreen;}
+    75% {background-color: yellow;}
+    100% {background-color: brown;}
+}
