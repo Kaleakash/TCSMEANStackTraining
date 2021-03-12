@@ -1,8 +1,19 @@
+
+var empObj =[];
+function storeInSession() {
+    sessionStorage.setItem("empInfo",empObj)
+}
+function retrieveFromSession() {
+    var obj = sessionStorage.getItem("empInfo");
+    console.log(obj);
+}
 function onFormSubmit(){
     //alert("Event generated...")
     var data = readFormData();
     insertNewRecord(data);
+    empObj.push(data);      //in empObj
     resetData();
+    
 }
 
 function readFormData() {
