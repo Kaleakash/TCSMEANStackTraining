@@ -1,0 +1,26 @@
+employee_id_name_mean_stack repository
+	angular-app-project
+	design-sell
+	team-budget-planner
+
+
+
+	Repository:
+		1. folders for each section end project
+		2. in that folder you can keep the project details document
+			ex: design sell.docx
+
+
+
+
+WriteUp: Document that will have project details: 
+	1. your git repository link
+	2. your source code is present inside which folder of your git repository
+		Note: better if you provide the structure
+
+
+ScreenShot: Attach the output of your project
+
+
+Source Code: You can zip all your source code and attach
+		.css 
