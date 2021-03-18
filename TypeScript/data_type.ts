@@ -14,3 +14,6 @@ stdName="Mahesh KUmar";
 age = 24;
 msg=100;
 msg="Ravi Kumar";
+console.log(a);
+console.log(b)
+console.log(msg);
