@@ -59,10 +59,8 @@ let emp4 = new Employee(103);
 emp4.disInfo();
 */
 // parameterized constructor with short cut initialization 
-class Employee {
-    constructor(private id:number,private name?:string,public salary:number=8000) {
-          
-    }
+/*class Employee {
+    constructor(private id:number,private name?:string,public salary:number=8000) {}
     disInfo() : void {
         console.log("id is "+this.id);
         console.log("name is "+this.name);
@@ -70,8 +68,29 @@ class Employee {
     }
 }
 let emp1 = new Employee(100,"Ravi",12000);
+emp1.salary=14000;
 console.log("Salary is "+emp1.salary);
-emp1.disInfo();
+emp1.disInfo();*/
+
+//Inheritance example 
+
+class Employee {        //super class 
+    disEmp() {
+        console.log("Employee class function")
+    }
+}
+class Manager extends Employee{ //sub class 
+    disMgr() {
+        console.log("Manager class function")
+    }
+}
+let emp1 = new Employee();
+emp1.disEmp();
+let mgr1 = new Manager();
+mgr1.disMgr();
+mgr1.disEmp();
+
+
 
 
 

@@ -15,6 +15,21 @@ emp1.empInfo();
 let emp2 = new Employee();
 emp2.empInfo();
 */
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // constructor concept 
 /*
 class Employee {
@@ -57,20 +72,39 @@ let emp4 = new Employee(103);
 emp4.disInfo();
 */
 // parameterized constructor with short cut initialization 
-var Employee = /** @class */ (function () {
-    function Employee(id, name, salary) {
-        if (salary === void 0) { salary = 8000; }
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
+/*class Employee {
+    constructor(private id:number,private name?:string,public salary:number=8000) {}
+    disInfo() : void {
+        console.log("id is "+this.id);
+        console.log("name is "+this.name);
+        console.log("salary is "+this.salary);
     }
-    Employee.prototype.disInfo = function () {
-        console.log("id is " + this.id);
-        console.log("name is " + this.name);
-        console.log("salary is " + this.salary);
+}
+let emp1 = new Employee(100,"Ravi",12000);
+emp1.salary=14000;
+console.log("Salary is "+emp1.salary);
+emp1.disInfo();*/
+//Inheritance example 
+var Employee = /** @class */ (function () {
+    function Employee() {
+    }
+    Employee.prototype.disEmp = function () {
+        console.log("Employee class function");
     };
     return Employee;
 }());
-var emp1 = new Employee(100, "Ravi", 12000);
-console.log("Salary is " + emp1.salary);
-emp1.disInfo();
+var Manager = /** @class */ (function (_super) {
+    __extends(Manager, _super);
+    function Manager() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Manager.prototype.disMgr = function () {
+        console.log("Manager class function");
+    };
+    return Manager;
+}(Employee));
+var emp1 = new Employee();
+emp1.disEmp();
+var mgr1 = new Manager();
+mgr1.disMgr();
+mgr1.disEmp();
