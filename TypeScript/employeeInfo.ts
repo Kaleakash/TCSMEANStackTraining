@@ -73,13 +73,13 @@ console.log("Salary is "+emp1.salary);
 emp1.disInfo();*/
 
 //Inheritance example 
-
-class Employee {        //super class 
+/*
+class Employee {        //super class it must be generics 
     disEmp() {
         console.log("Employee class function")
     }
 }
-class Manager extends Employee{ //sub class 
+class Manager extends Employee{ //sub class : specific 
     disMgr() {
         console.log("Manager class function")
     }
@@ -89,6 +89,59 @@ emp1.disEmp();
 let mgr1 = new Manager();
 mgr1.disMgr();
 mgr1.disEmp();
+*/
+
+//Interface example 
+/*interface Emp {
+        id:number;
+        dis():void;     // incomplete functions. 
+}
+class EmpInfo implements Emp {
+    id:number=100;
+    dis():void {
+        console.log("dis function implemeted by Emp info class")
+    }
+}*/
+
+
+// interface with variable 
+interface Employee {
+        id:number;
+        name:string;
+        salary:number;
+        age?:number;
+}
+let emp1:Employee={id:100,name:"Ravi",salary:12000}; //object literal style
+let emp2:Employee={id:101,name:"Ravi",salary:14000}; //object literal style
+let emp3:Employee={id:102,name:"Mahesh",salary:12000,age:21}; //object literal style
+
+//interface with functions (incomplete)
+// interface is use to achieve abstraction 
+
+interface Bike {        // specification 
+    speed():void
+}
+class Honda implements Bike {       // implementation 
+    speed() : void {
+        console.log("60km/hr")
+    }
+}
+class Pulsar implements Bike {
+    speed() : void {
+        console.log("90km/hr")
+    }
+}
+//let bb = new Bike();
+let hh = new Honda();
+let pu = new Pulsar();
+hh.speed();
+pu.speed();
+
+
+
+
+
+
 
 
 
