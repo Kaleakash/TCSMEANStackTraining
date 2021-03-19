@@ -33,7 +33,7 @@ emp1.disInfo();
 */
 
 // parameterized cosntructor 
-
+/*
 class Employee {
     id:number;
     name:string;
@@ -57,5 +57,21 @@ let emp3 = new Employee(102,"Mahesh");
 emp3.disInfo();
 let emp4 = new Employee(103);
 emp4.disInfo();
+*/
+// parameterized constructor with short cut initialization 
+class Employee {
+    constructor(private id:number,private name?:string,public salary:number=8000) {
+          
+    }
+    disInfo() : void {
+        console.log("id is "+this.id);
+        console.log("name is "+this.name);
+        console.log("salary is "+this.salary);
+    }
+}
+let emp1 = new Employee(100,"Ravi",12000);
+console.log("Salary is "+emp1.salary);
+emp1.disInfo();
+
 
 
