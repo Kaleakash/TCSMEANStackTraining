@@ -10,7 +10,7 @@ let emp1 = new Employee();
 emp1.disEmpInfo();
 //ES6 --JavaScript as well as typescript 
 class Person {
-        let fname:string="Ajay Kumar"
+        fname:string="Ajay Kumar"
         disPersonInfo():void {
             console.log("Person class function")
             console.log("Name is "+this.fname);
