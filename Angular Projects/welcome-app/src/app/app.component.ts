@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core';   
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'abc',       // user-defined tags. 
+  templateUrl: './app.component.html',  // connected html page 
+  styleUrls: ['./app.component.css']    // connected css page 
 })
 export class AppComponent {
-  title = 'welcome-app';
+  name:string="Akash";
+  
+  id:number=123;
+  fname:string="Raj Deep";
+  age:number=21;
+
 }
