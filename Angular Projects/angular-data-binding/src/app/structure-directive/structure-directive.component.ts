@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class StructureDirectiveComponent implements OnInit {
   flag:boolean = false;
   b1:string="show"
+  stdNames:Array<string>=["Raj","Seeta","Reeta","Meeta","Keeta","Teeta"];
+  skillNames:Array<String>=new Array();
   constructor() { }
 
   ngOnInit(): void {
@@ -19,5 +21,9 @@ export class StructureDirectiveComponent implements OnInit {
     }else {
       this.b1 = "show"
     }
+  }
+
+  addSkillName(name:any){
+    this.skillNames.push(name);
   }
 }

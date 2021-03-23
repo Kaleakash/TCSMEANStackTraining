@@ -4,4 +4,16 @@
     <div *ngIf="flag">
         <h2>Welcome to structure direcitve code</h2>
     </div>
+    <h3>Add Students Names are </h3>
+    <ul>
+        <li *ngFor="let obj of stdNames">{{obj}}</li>
+    </ul>
+    <hr/>
+    SkillName:<input type="text" #sname/>
+    <input type="button" value="Add SkillSet" 
+    (click)="addSkillName(sname.value)"/>
+    <br/>
+    <ul>
+        <li *ngFor="let skill of skillNames">{{skill}}</li>
+    </ul>
 </div>
