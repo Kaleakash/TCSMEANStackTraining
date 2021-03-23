@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../employee.model';
 
 @Component({
   selector: 'app-structure-directive',
@@ -10,6 +11,9 @@ export class StructureDirectiveComponent implements OnInit {
   b1:string="show"
   stdNames:Array<string>=["Raj","Seeta","Reeta","Meeta","Keeta","Teeta"];
   skillNames:Array<String>=new Array();
+  
+  emp:Employee=new Employee(100,"Ravi",12000);
+
   constructor() { }
 
   ngOnInit(): void {
