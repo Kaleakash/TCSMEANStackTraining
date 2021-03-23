@@ -13,8 +13,17 @@ export class StructureDirectiveComponent implements OnInit {
   skillNames:Array<String>=new Array();
   
   emp:Employee=new Employee(100,"Ravi",12000);
-
-  constructor() { }
+  
+  employees:Array<Employee>=new Array();
+  
+  constructor() { 
+    let emp1 = new Employee(1,"Reeta",16000);
+    let emp2 = new Employee(2,"Meeta",18000);
+    let emp3 = new Employee(3,"Keeta",20000);
+    this.employees.push(emp1);
+    this.employees.push(emp2);
+    this.employees.push(emp3);
+  }
 
   ngOnInit(): void {
   }

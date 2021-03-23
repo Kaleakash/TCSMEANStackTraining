@@ -21,4 +21,17 @@
         Employee details is<br/> 
         Id is {{emp.id}}, Name is {{emp.name}} and salary is {{emp.salary}}
     </p>
+    <br/>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+        </tr>
+    </table>
 </div>
