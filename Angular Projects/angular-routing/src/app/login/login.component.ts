@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   }
   homePage(){
     //Token must store when username and password must be correct 
+    //session Id or JWT (Json web Token);
     sessionStorage.setItem("token","123");
     this.router.navigate(["home"]);
   }
