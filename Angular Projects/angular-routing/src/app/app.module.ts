@@ -7,6 +7,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MyAuthGaurd } from './myauthgaurd';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MyAuthGaurd],   // provide the details about auth gaurd 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

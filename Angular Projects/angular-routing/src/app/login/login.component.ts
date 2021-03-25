@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   homePage(){
+    //Token must store when username and password must be correct 
+    sessionStorage.setItem("token","123");
     this.router.navigate(["home"]);
   }
 
