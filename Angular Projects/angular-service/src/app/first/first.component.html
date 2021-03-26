@@ -10,4 +10,19 @@
 <br/>
 <input type="button" value="Call Fake Service"
 (click)="callFakeSevice()"/>
+
+<table border="1">
+    <tr>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Completed</th>
+    </tr>
+    <tr *ngFor="let data of fakeData">
+            <td>{{data.userId}}</td>
+            <td>{{data.id}}</td>
+            <td>{{data.title}}</td>
+            <td>{{data.completed}}</td>
+    </tr>
+</table>
 </div>
