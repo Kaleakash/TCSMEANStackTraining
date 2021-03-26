@@ -1,0 +1,12 @@
+<div>
+    <h2>Two way data binding</h2>
+    First Name is {{fname}}
+    <br/>
+    <input type="text" [(ngModel)]="fname"/>
+    <h2>One way data binding</h2>
+    Age {{age}}<br/>
+    <input type="text" [value]="age"/>
+    <h2>Two way binding using Property and Event binding</h2>
+    SkillSet {{skill}}<br/>
+<input type="text" [value]="skill" #skillRef (keyup)="updateSkill(skillRef.value)"/>
+</div>
