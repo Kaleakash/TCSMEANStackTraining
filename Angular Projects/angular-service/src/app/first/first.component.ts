@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Fake } from '../fake.model';
 import { FakeService } from '../fake.service';
 import { MyService } from '../mycustom.service';
-
 @Component({
   selector: 'app-first',
   templateUrl: './first.component.html',
@@ -13,12 +12,11 @@ export class FirstComponent implements OnInit {
   msg1:string="";
   msg2:string="";
   constructor(public service:FakeService) { } //DI : pull the object from container. 
-
   fakeData:Array<Fake>=[];
-  
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {    
+    this.service.loadFakeData().subscribe(data=> this.fakeData=data);
 
+  }
   fun() {
     let obj = new MyService();  // created the object. 
     this.msg1=obj.sayHello();
@@ -26,9 +24,8 @@ export class FirstComponent implements OnInit {
   display() {
     this.msg2 = this.service.sayHello();
   }
-
   callFakeSevice() {
-    this.service.loadFakeData().subscribe(data=>this.fakeData=data);
+    //this.service.loadFakeData().subscribe(data=> this.fakeData=data);
   }
 
 }
