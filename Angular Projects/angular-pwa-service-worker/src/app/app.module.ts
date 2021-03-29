@@ -6,18 +6,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonAppComponent } from './button-app/button-app.component';
 import {MatButtonModule} from '@angular/material/button';
 import { CardComponent } from './card/card.component';
-import {MatCardModule} from '@angular/material/card'
+import {MatCardModule} from '@angular/material/card';
+import { EmployeeComponent } from './employee/employee.component'
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
     ButtonAppComponent,
-    CardComponent
+    CardComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
