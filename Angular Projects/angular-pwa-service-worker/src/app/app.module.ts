@@ -11,6 +11,9 @@ import { EmployeeComponent } from './employee/employee.component'
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {HttpClientModule} from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatCardModule,
     FormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
