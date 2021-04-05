@@ -35,5 +35,4 @@ console.log(util.inspect(empInfo,{showHidden:true}))
 //console.log(util.inspect(Employee))
 //console.log(util.inspect(emp))
 //console.log(util.inspect(emp1,{showHidden:true}))
-
-//console.log(util.inspect(fs))
+console.log(util.inspect(fs))
