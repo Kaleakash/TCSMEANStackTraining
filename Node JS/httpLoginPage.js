@@ -12,11 +12,12 @@ let loginInfo = `
     </form>
 `
 let server = http.createServer((req,res)=> {
-    console.log(req.url)
+    //console.log(url.parse(req.url,true))
+    var pathInfo = url.parse(req.url,true).pathname;
     if(req.url=="/"){
     res.setHeader("content-type","text/html");  // by default data consider as a html 
     res.end(loginInfo);
-    }else {
+    }else if(pathInfo=="/login"){
     var data = url.parse(req.url,true).query;
     if(data.user=="Ajay" && data.pass=="Kumar"){
         res.write("Successfully Login!");
