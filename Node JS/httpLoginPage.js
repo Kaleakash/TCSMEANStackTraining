@@ -2,7 +2,7 @@ let http = require("http");
 let url = require("url");
 let port = 9999;
 let loginInfo = `
-        <form action="/login" method="get">
+    <form action="/login" method="get">
         <label>UserName</label>
         <input type="text" name="user"/><br/>
         <label>Password</label>
