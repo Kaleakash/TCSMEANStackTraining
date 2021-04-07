@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   checkUser(loginInfo:any){
     if(loginInfo.user=="Raj" && loginInfo.pass=="123"){
-      this.router.navigate(["success"]);
+      this.router.navigate(["success",loginInfo.user]);
     }else {
       this.msg = "Invalid user name or password";
     }

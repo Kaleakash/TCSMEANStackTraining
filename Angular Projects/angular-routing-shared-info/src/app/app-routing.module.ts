@@ -5,7 +5,7 @@ import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
-  {path:"success",component:SuccessComponent}
+  {path:"success/:user",component:SuccessComponent}
 ];
 
 @NgModule({
