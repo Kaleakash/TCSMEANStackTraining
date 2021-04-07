@@ -1,0 +1,21 @@
+<div>
+  <h1>Component Communication Example</h1>
+  <h2>Parent Component</h2>
+  Name :<input type="text" #nameRef/><br/>
+  <input type="button" value="pass the name"
+  (click)="passName(nameRef.value)"/><br/>
+  Parent Name in parent component template is {{parentName}}
+  <br/>
+  <h2>Add Product Names</h2>
+  Product Name :<input type="text" #productRef/><br/>
+  <input type="button" value="Add Product"
+  (click)="addProduct(productRef.value)"/>
+  <br/>
+  <hr/>
+  <app-child1 [pName]="parentName"></app-child1>
+  <hr/>
+  <app-child2 [productNamesFromParent]="products"></app-child2>
+  <hr/>
+
+  
+</div>
