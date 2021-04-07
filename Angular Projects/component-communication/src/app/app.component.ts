@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   parentName:string="";
+  childAge?:number;
   passName(name:any){
     this.parentName=name;
   }

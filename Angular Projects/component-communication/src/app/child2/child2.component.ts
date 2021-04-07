@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class Child2Component implements OnInit {
   @Input()
   productNamesFromParent:Array<string>=new Array();
+  
   constructor() { }
 
   ngOnInit(): void {

@@ -1,5 +1,6 @@
 <div>
   <h1>Component Communication Example</h1>
+  Child Age is {{childAge}}<br/>
   <h2>Parent Component</h2>
   Name :<input type="text" #nameRef/><br/>
   <input type="button" value="pass the name"
@@ -12,7 +13,7 @@
   (click)="addProduct(productRef.value)"/>
   <br/>
   <hr/>
-  <app-child1 [pName]="parentName"></app-child1>
+  <app-child1 [pName]="parentName" (ageEventRef)="childAge=$event"></app-child1>
   <hr/>
   <app-child2 [productNamesFromParent]="products"></app-child2>
   <hr/>
