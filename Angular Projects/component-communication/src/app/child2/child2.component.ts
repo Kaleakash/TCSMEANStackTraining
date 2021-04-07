@@ -9,9 +9,14 @@ export class Child2Component implements OnInit {
   @Input()
   productNamesFromParent:Array<string>=new Array();
   
+  desg?:string="Tester";
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  child2Fun() {
+    console.log("Parent component called...")
+  }
 }

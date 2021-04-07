@@ -1,5 +1,12 @@
 <div>
   <h1>Component Communication Example</h1>
+  
+  Child2 Age {{childDesg}}<br/>
+  <input type="button" value="child2 function call"
+  (click)="callChild2Function()"/><br/>
+
+
+  <hr/>
   Child Age is {{childAge}}<br/>
   <h2>Parent Component</h2>
   Name :<input type="text" #nameRef/><br/>
