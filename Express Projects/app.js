@@ -1,11 +1,13 @@
 let express = require("express");   // load the module 
 let app = express();        // creating the reference of express module
 let port =9090;
-
+let bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended:true}));    // enable any format body data
+//app.use(bodyParser.json())     // enable json data 
 //Get methods. 
 //http://localhost:9090
 app.get("/",(req,res)=> {
-        res.send("Welcome to Express module");
+        res.send("Welcome to Express module - Get method");
 })
 //http://localhost:9090/aboutus
 app.get("/aboutus",(req,res)=> {
@@ -53,6 +55,20 @@ app.get("/multiplePath/:id/:name/:salary",(req,res)=> {
     //res.send()
     res.send(`${JSON.stringify(req.params)} <br/>Id is ${lid}, Name is ${lname} Salary is ${lsalary}`);
 });
+
+//Post without passing any value with empty path 
+
+//  http://localhost:9090/          method post 
+app.post("/",(req,res)=> {
+    res.send("Welcome to Express module - Post method");
+})
+
+// http://localhost:9090/storeData
+app.post("/storeData",(req,res)=> {
+    let name = req.body.name;
+    res.send("Welcome to Node JS Post method "+name);
+})
+
 
 
 app.listen(port,()=>console.log(`Server running on port nubmer ${port}`));
