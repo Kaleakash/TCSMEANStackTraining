@@ -1,7 +1,7 @@
 let http = require("http");
 let port = 9999;
 let server = http.createServer((request,response)=> {
-        if(request.url=="/aboutus"){
+        if(request.url=="/"){
             response.write("Welcome to About Us Page")
         }
         else if(request.url=="/contactus"){
