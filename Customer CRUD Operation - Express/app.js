@@ -19,6 +19,32 @@ app.get("/allCustomers",(req,res)=> {
         res.json(customers);
 });
 
+//Post Methods 
+// http://localhost:9090/storeCustomer
+app.post("/storeCustomer",(req,res)=> {
+        //console.log(req.body)
+        customers.push(req.body);   // add the data in array 
+        res.send("Customer records added successfully...");
+})
+
+// put Method : to update the records 
+app.put("/updateAge",(req,res)=> {
+    let cid = req.body.custId;
+    let cage = req.body.age;
+    let flag = 0;
+    customers.find(c=>{
+        if(c.custId==cid){
+            c.age = cage;
+            flag++;
+         }
+    }); 
+        if(flag==0){
+            res.send("CustId is invalid")    
+        }else {
+            res.send("Customer Age updated successfully...")
+        }
+    
+})
 
 //start server 
 app.listen(port,()=>console.log(`Server running on port number ${port}`));
