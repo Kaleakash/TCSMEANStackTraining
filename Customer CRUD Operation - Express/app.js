@@ -21,6 +21,7 @@ app.get("/allCustomers",(req,res)=> {
 
 //Post Methods 
 // http://localhost:9090/storeCustomer
+// Data format {"custId":100,"cname":"Ravi","age":21}   Method Post 
 app.post("/storeCustomer",(req,res)=> {
         //console.log(req.body)
         customers.push(req.body);   // add the data in array 
@@ -28,6 +29,8 @@ app.post("/storeCustomer",(req,res)=> {
 })
 
 // put Method : to update the records 
+// http://localhost:9090/updateAge
+// Data format {"custId":100,"age":21}  Method Put 
 app.put("/updateAge",(req,res)=> {
     let cid = req.body.custId;
     let cage = req.body.age;
