@@ -9,8 +9,8 @@ app.use(bodyParser.json());     // enable json data.
 
 //Static customer array data 
 let customers = [
-    {"custId":100,"cname":"Ravi","age":21},
-    {"custId":101,"cname":"Rajesh","age":24}
+    {custId:100,"cname":"Ravi","age":21},
+    {custId:101,"cname":"Rajesh","age":24}
 ];
 
 //Get methods 
@@ -47,6 +47,28 @@ app.put("/updateAge",(req,res)=> {
             res.send("Customer Age updated successfully...")
         }
     
+})
+
+// http://localhost:9090/deleteCustomer/100
+// Passing value using path param concept. 
+app.delete("/deleteCustomer/:cid",(req,res)=> {
+    let id = req.params.cid;
+    let flag = 0;
+    let j = 0;
+    customers.find((c,i)=> {
+        let ccId = c.custId;
+        if( ccId== id){
+            j=i;
+            flag++; 
+        }
+    })
+    
+    if(flag==0){
+            res.send("CustId is invalid")
+    }else {
+             customers.splice(j,1);  // 1st parameter index, number records.
+            res.send("Customer record deleted successfully....")
+    }
 })
 
 //start server 
