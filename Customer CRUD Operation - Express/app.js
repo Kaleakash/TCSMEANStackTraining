@@ -50,7 +50,7 @@ app.put("/updateAge",(req,res)=> {
 })
 
 // http://localhost:9090/deleteCustomer/100
-// Passing value using path param concept. 
+// Passing value using path param concept. Method Get 
 app.delete("/deleteCustomer/:cid",(req,res)=> {
     let id = req.params.cid;
     let flag = 0;
