@@ -8,8 +8,8 @@ app.get("/",(req,res)=> {
 
 io.on("connection",(socket)=> {
     console.log("Client connected to application.....");
-
-    socket.on("chat message",(msg)=> {
+    
+    socket.on("chat",(msg)=> {
         console.log(msg);
     })
 })
