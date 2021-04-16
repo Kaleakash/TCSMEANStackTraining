@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Product } from '../model.product';
+import { ProductService } from '../product.service';
 @Component({
   selector: 'app-retreive-product',
   templateUrl: './retreive-product.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RetreiveProductComponent implements OnInit {
 
-  constructor() { }
+  products?:Array<Product>
+  constructor(public productSer:ProductService) { }
 
   ngOnInit(): void {
+      this.productSer.retrieveAllProductDetails().subscribe(result=>this.products=result);
   }
+
 
 }
