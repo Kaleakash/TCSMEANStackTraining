@@ -1,1 +1,12 @@
-<p>store-product works!</p>
+<div>
+    <form #productRef="ngForm" (ngSubmit)="storeProduct(productRef.value)">
+        <label>ProductId</label>
+        <input type="text" name="pid" ngModel><br/>
+        <label>ProductName</label>
+        <input type="text" name="pname" ngModel><br/>
+        <label>Price</label>
+        <input type="text" name="price" ngModel><br/>
+        <input type="submit" value="store"/>
+        <input type="reset" value="reset"/>
+    </form>
+</div>

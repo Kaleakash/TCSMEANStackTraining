@@ -12,4 +12,7 @@ export class StoreProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  storeProduct(productRef:any){
+    console.log(productRef);
+  }
 }

@@ -7,7 +7,8 @@ import { StoreProductComponent } from './store-product/store-product.component';
 import { RetreiveProductComponent } from './retreive-product/retreive-product.component';
 import { DeleteProductByIdComponent } from './delete-product-by-id/delete-product-by-id.component';
 import { UpdateProductPriceComponent } from './update-product-price/update-product-price.component';
-
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { UpdateProductPriceComponent } from './update-product-price/update-produ
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
