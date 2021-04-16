@@ -2,7 +2,7 @@
 let app = require("express")();
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
-
+let cors = require("cors");
 
 
 //Database URL Details 
@@ -11,6 +11,7 @@ let url = "mongodb://localhost:27017/meanstack";
 //middleware enable data from post method.
 app.use(bodyParser.urlencoded({extended:true}));    // enable body part data  
 app.use(bodyParser.json());                         // json data. 
+app.use(cors());           // enable cors policy 
 
 //Database connection without warning 
 const mongooseDbOption ={       // to avoid warning 
