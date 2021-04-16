@@ -10,7 +10,69 @@ let getProductDetails =(req,res)=> {
         }
     })
 
+}
+
+let getProductById = (req,res)=> {
+    
+    let pid = req.params.pid;       //passing id through path param 
+    
+    ProductModel.find({_id:pid},(err,data)=> {
+        if(!err){
+            res.json(data);
+        }
+    })
+}
+
+let storeProductDetails = (req,res)=> {
+   
+    let product = new ProductModel({
+        _id:req.body.pid,
+        pname:req.body.pname,
+        price:req.body.price
+    });
+
+    product.save((err,result)=> {
+        if(!err){
+            res.send("Record stored successfully "+result)
+        }else {
+            res.send("Record didn't store "+err);
+        }
+    })
 
 }
 
-module.exports={getProductDetails}
+let deleteProductById= (req,res)=> {
+    let pid = req.params.pid;
+    ProductModel.deleteOne({_id:pid},(err,result)=> {
+        if(!err){
+                if(result.deletedCount>0){
+                    res.send("Record deleted successfully")
+                }else {
+                    res.send("Record not present");
+                }
+        }else {
+            res.send("Error generated "+err);
+        }
+    })
+
+}
+
+let updateProductPrice= (req,res)=> {
+    let pid = req.body.pid;
+    let updatedPrice = req.body.price;
+    ProductModel.updateMany({_id:pid},{$set:{price:updatedPrice}},(err,result)=> {
+        if(!err){
+            if(result.nModified>0){
+                    res.send("Record updated succesfully")
+            }else {
+                    res.send("Record is not available");
+            }
+        }else {
+            res.send("Error generated "+err);
+        }
+    })
+
+}
+
+
+module.exports={getProductDetails,getProductById,storeProductDetails,deleteProductById,updateProductPrice}
