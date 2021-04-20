@@ -9,7 +9,7 @@ export class ProductService {
   constructor(public http:HttpClient) { }
 //post method 1st parameter url and 2nd parameter json data. 
   storeProductDetailsInfo(productRef:any){
-    this.http.post("http://localhost:9090/product/storeProductDetails",productRef).
+    this.http.post("http://localhost:9090/product/storeProductDetails",productRef,{responseType:"text"}).
     subscribe(result=>console.log(result),error=>console.log(error));
   }
   retrieveAllProductDetails():Observable<Product[]>{

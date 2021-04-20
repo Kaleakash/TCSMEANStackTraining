@@ -34,10 +34,10 @@ let storeProductDetails = (req,res)=> {
 
     product.save((err,result)=> {
         if(!err){
-            res.send("Record stored successfully "+result)
+            res.send("Record stored successfully ")
             //res.json({"msg":"Record stored successfully"})
         }else {
-            res.send("Record didn't store "+err);
+            res.send("Record didn't store ");
         }
     })
 
