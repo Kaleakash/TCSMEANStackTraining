@@ -19,4 +19,9 @@ export class ProductService {
   retrieveProductById(id:any):Observable<Product[]>{
     return this.http.get<Product[]>("http://localhost:9090/product/retrieveProductById/"+id)
   }
+
+  //by default all HttpClient method return type is observable with json format data. 
+  deleteProductById(id:any):any{
+    return this.http.delete("http://localhost:9090/product/deleteProductById/"+id,{responseType:'text'});
+  }
 }
