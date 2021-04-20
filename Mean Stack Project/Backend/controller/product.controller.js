@@ -76,5 +76,4 @@ let updateProductPrice= (req,res)=> {
 
 }
 
-
 module.exports={getProductDetails,getProductById,storeProductDetails,deleteProductById,updateProductPrice}
