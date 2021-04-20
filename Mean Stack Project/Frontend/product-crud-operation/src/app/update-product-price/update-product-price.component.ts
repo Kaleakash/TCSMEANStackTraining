@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-update-product-price',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-product-price.component.css']
 })
 export class UpdateProductPriceComponent implements OnInit {
-
-  constructor() { }
+  updateMsg?:string;
+  constructor(public productService:ProductService) { }
 
   ngOnInit(): void {
   }
-
+  updatePrice(productRef:any){
+    console.log(productRef);
+    this.productService.updateProductPrice(productRef).subscribe((result:string)=> {
+      this.updateMsg=result;
+    });
+  }
 }

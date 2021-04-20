@@ -18,7 +18,8 @@ let getProductById = (req,res)=> {
     
     ProductModel.find({_id:pid},(err,data)=> {
         if(!err){
-            res.json(data);
+            res.json(data);         // return array 
+            //res.json(data[0])     // return only one object 
         }
     })
 }
@@ -34,6 +35,7 @@ let storeProductDetails = (req,res)=> {
     product.save((err,result)=> {
         if(!err){
             res.send("Record stored successfully "+result)
+            //res.json({"msg":"Record stored successfully"})
         }else {
             res.send("Record didn't store "+err);
         }
