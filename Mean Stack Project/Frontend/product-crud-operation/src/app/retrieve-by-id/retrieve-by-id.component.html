@@ -1,0 +1,6 @@
+<div>
+    Id :<input type="text" #idRef/><br/>
+    <input type="button" value="search by id"
+    (click)="searchDetails(idRef.value)"/><br/>
+    {{resultMsg}}
+</div>

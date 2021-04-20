@@ -16,5 +16,7 @@ export class ProductService {
      return this.http.get<Product[]>("http://localhost:9090/product/allProductDetails")
   }
 
-
+  retrieveProductById(id:any):Observable<Product[]>{
+    return this.http.get<Product[]>("http://localhost:9090/product/retrieveProductById/"+id)
+  }
 }

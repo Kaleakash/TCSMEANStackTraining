@@ -9,13 +9,15 @@ import { DeleteProductByIdComponent } from './delete-product-by-id/delete-produc
 import { UpdateProductPriceComponent } from './update-product-price/update-product-price.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { RetrieveByIdComponent } from './retrieve-by-id/retrieve-by-id.component';
 @NgModule({
   declarations: [
     AppComponent,
     StoreProductComponent,
     RetreiveProductComponent,
     DeleteProductByIdComponent,
-    UpdateProductPriceComponent
+    UpdateProductPriceComponent,
+    RetrieveByIdComponent
   ],
   imports: [
     BrowserModule,
