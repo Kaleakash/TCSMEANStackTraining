@@ -1,12 +1,22 @@
 //Load all required modules 
-let app = require("express")();
+let express = require("express");
+let app = express();
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
 let cors = require("cors");
 
+//Unable to load the static files 
+app.use(express.static(process.cwd()));
 
 //Database URL Details 
 let url = "mongodb://localhost:27017/meanstack";
+
+//load the frontend file ie angular program 
+
+app.get('/', (req,res) => {
+ res.sendFile(__dirname+"/index.html")
+});
+
 
 //middleware enable data from post method.
 app.use(bodyParser.urlencoded({extended:true}));    // enable body part data  
